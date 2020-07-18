@@ -1,10 +1,8 @@
 package com.example.shift
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View.GONE
-import android.view.View.VISIBLE
-import androidx.core.view.isVisible
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -14,11 +12,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         button.setOnClickListener {
-            if (imageView.isVisible) {
-                imageView.visibility = GONE
-            } else {
-                imageView.visibility = VISIBLE
-            }
+            val intent = Intent(this, NoteListActivity::class.java)
+            startActivity(intent)
         }
     }
 }
