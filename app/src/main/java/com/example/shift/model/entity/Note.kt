@@ -1,4 +1,4 @@
-package com.example.shift
+package com.example.shift.model.entity
 
 import java.io.Serializable
 

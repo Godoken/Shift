@@ -1,10 +1,12 @@
-package com.example.shift
+package com.example.shift.presentation.ui.note.list
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.shift.R
+import com.example.shift.model.entity.Note
 import java.util.*
 
 class NoteListAdapter(private val clickListener:(Note) -> Unit): RecyclerView.Adapter<NoteListAdapter.ViewHolder>() {
@@ -20,7 +22,10 @@ class NoteListAdapter(private val clickListener:(Note) -> Unit): RecyclerView.Ad
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.cell_note, parent, false)
-        return ViewHolder(view, clickListener)
+        return ViewHolder(
+            view,
+            clickListener
+        )
     }
 
     override fun getItemCount(): Int {
