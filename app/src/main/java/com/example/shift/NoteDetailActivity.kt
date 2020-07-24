@@ -10,9 +10,9 @@ class NoteDetailActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detail_note)
 
-        val parameters = intent.getStringArrayListExtra("Note")
+        val parameters = intent.getSerializableExtra("Note") as Note?
 
-        titleDetail.text = parameters?.get(0)
-        descriptionDetail.text = parameters?.get(1)
+        titleDetail.text = parameters?.title
+        descriptionDetail.text = parameters?.description
     }
 }

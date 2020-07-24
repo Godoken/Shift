@@ -20,24 +20,22 @@ class NoteListActivity : AppCompatActivity() {
         Note("Подготовиться к докладу", "Описание 9")
     )
 
+    val adapter = NoteListAdapter { note ->
+        val intent = Intent(this@NoteListActivity, NoteDetailActivity::class.java)
+        intent.putExtra("Note", note)
+        startActivity(intent)
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_note_list)
 
-        val adapter = NoteListAdapter()
         val layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL, false)
 
         recyclerView.adapter = adapter
         recyclerView.layoutManager = layoutManager
 
         adapter.setNoteList(noteList)
-        adapter.setListener(object : NoteListAdapter.NoteListener {
-            override fun onClickNote(model: Note) {
-                val intent = Intent(this@NoteListActivity, NoteDetailActivity::class.java)
-                intent.putStringArrayListExtra("Note", arrayListOf(model.title, model.description))
-                startActivity(intent)
-            }
-        })
     }
 }
