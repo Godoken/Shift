@@ -1,7 +1,9 @@
-package com.example.shift
+package com.example.shift.presentation.ui.note
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.shift.R
+import com.example.shift.model.entity.Note
 import kotlinx.android.synthetic.main.activity_detail_note.*
 
 class NoteDetailActivity: AppCompatActivity() {

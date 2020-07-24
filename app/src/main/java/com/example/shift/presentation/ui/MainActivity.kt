@@ -1,8 +1,10 @@
-package com.example.shift
+package com.example.shift.presentation.ui
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.shift.R
+import com.example.shift.presentation.ui.note.list.NoteListActivity
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
