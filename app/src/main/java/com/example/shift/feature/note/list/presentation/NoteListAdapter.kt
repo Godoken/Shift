@@ -1,4 +1,4 @@
-package com.example.shift.presentation.ui.note.list
+package com.example.shift.feature.note.list.presentation
 
 import android.view.LayoutInflater
 import android.view.View
@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.shift.R
-import com.example.shift.model.entity.Note
+import com.example.shift.feature.note.domain.entity.Note
 import java.util.*
 
 class NoteListAdapter(private val clickListener:(Note) -> Unit): RecyclerView.Adapter<NoteListAdapter.ViewHolder>() {

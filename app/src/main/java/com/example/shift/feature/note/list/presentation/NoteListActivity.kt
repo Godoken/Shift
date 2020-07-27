@@ -1,4 +1,4 @@
-package com.example.shift.presentation.ui.note.list
+package com.example.shift.feature.note.list.presentation
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,24 +9,20 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.shift.R
-import com.example.shift.model.entity.Note
-import com.example.shift.presentation.ui.note.NoteDetailActivity
-import com.example.shift.presentation.viewmodel.note.list.NoteListViewModel
+import com.example.shift.feature.note.domain.entity.Note
+import com.example.shift.feature.note.detail.presentaion.NoteDetailActivity
+import com.example.shift.feature.note.list.di.NoteListViewModelFactory
 import kotlinx.android.synthetic.main.activity_note_list.*
 
 class NoteListActivity : AppCompatActivity() {
 
-    private val viewModelFactory = object:ViewModelProvider.Factory {
-        override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-            return modelClass.getConstructor(String::class.java).newInstance("very important string")
-        }
-    }
     private val viewModel: NoteListViewModel by viewModels {
-        viewModelFactory
+        NoteListViewModelFactory()
     }
-    private val adapter = NoteListAdapter { note ->
-        viewModel.noteClicked(note)
-    }
+    private val adapter =
+        NoteListAdapter { note ->
+            viewModel.noteClicked(note)
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

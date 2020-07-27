@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".presentation.ui.MainActivity">
+        <activity android:name=".feature.hello.presentation.HelloActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -18,11 +18,11 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.ui.note.list.NoteListActivity">
+        <activity android:name=".feature.note.list.presentation.NoteListActivity">
 
         </activity>
 
-        <activity android:name=".presentation.ui.note.NoteDetailActivity">
+        <activity android:name=".feature.note.detail.presentaion.NoteDetailActivity">
 
         </activity>
 
